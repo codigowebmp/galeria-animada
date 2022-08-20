@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+*{
+    font-family: 'inconsolata';
+}
+body{
+    background-color: black;
+    text-align: center;
+    color: #fff;
+}
+.contenedor{
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.img1{
+    background-image: url(img/1.jpg);
+}
+.img2{
+    background-image: url(img/2.jpg);
+}
+.img3{
+    background-image: url(img/3.jpg);
+}
+.item{
+    width: 30%;
+    height: 400px;
+    background-size: cover;
+    background-position: center center;
+    margin: 0 10px;
+    transition: .3s;
+    position: relative;
+    border-radius: 20px;
+}
+.item:hover{
+    width: 70%;
+}
+.overlay{
+    position: absolute;
+    background: linear-gradient(to bottom, transparent 80%, rgba(0,0,0,.7));
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.item .titulo{
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: 0;
+    transform-origin: left top 0;
+    text-shadow: 2px 2px 3px #000;
+    letter-spacing: 2px;
+    left: 20px;
+}
+.item .nombre{
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    transition: 1s;
+    opacity: 0;
+}
+.item .titulo::after{
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 120%;
+    background-color: #371c4b;
+    left: 0;
+    z-index: -1;
+    transition: .5s;
+    line-height: 40px;
+}
+.item:hover .nombre{
+    opacity: 1;
+}
+.item:hover .titulo::after{
+    width: 100%;
+}
+
